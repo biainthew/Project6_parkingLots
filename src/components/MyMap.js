@@ -3,7 +3,6 @@ import axios from 'axios';
 import { Map, MarkerClusterer } from 'react-kakao-maps-sdk';
 import './MyMap.scss';
 import MapMarkers from './Mapmarkers';
-import Detail from './Detail';
 import { useRef } from 'react';
 const { kakao } = window;
 
@@ -81,7 +80,6 @@ const MyMap = () => {
                     <MapMarkers locations={locations} />
                 </MarkerClusterer>
             </Map>
-            <Detail locations={locations} />
         </div>
     );
 };
