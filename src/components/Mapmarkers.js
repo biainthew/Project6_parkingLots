@@ -4,7 +4,6 @@
 import React from 'react';
 import { useState } from 'react';
 import { CustomOverlayMap, MapMarker } from 'react-kakao-maps-sdk';
-import Detail from './Detail';
 
 const MapMarkers = ({ locations }) => {
     const positions = locations.map((item, idx) => {
