@@ -44,7 +44,7 @@ const MapMarkers = ({ locations }) => {
                         <MapMarker
                             position={location}
                             image={{
-                                src: '/img/Parkinglot_sign.svg',
+                                src: './img/Parkinglot_sign.svg',
                                 size: {
                                     width: 35,
                                     height: 46,
@@ -66,7 +66,7 @@ const MapMarkers = ({ locations }) => {
                                     }}
                                     onClick={() => setIsOpen(false)}
                                 >
-                                    <img src="/img/xmark.svg" alt="x" />
+                                    <img src="./img/xmark.svg" alt="x" />
                                 </div>
                                 <div className="detail">
                                     <div className="detail-line"></div>
