@@ -40,7 +40,7 @@ const MyMap = () => {
     useEffect(() => {
         axios
             .get(
-                'http://api.kcisa.kr/openapi/service/rest/convergence2019/getConver11?serviceKey=51a64879-1354-44fe-a738-c8a05f7559d1&numOfRows=50',
+                '//api.kcisa.kr/openapi/service/rest/convergence2019/getConver11?serviceKey=51a64879-1354-44fe-a738-c8a05f7559d1&numOfRows=50',
             )
             .then((result) => {
                 locations = result.data.response.body.items.item;
