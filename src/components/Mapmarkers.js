@@ -23,15 +23,20 @@ const MapMarkers = ({ locations }) => {
             '평일운영시간: 0:00~0:00  |  토요일운영시간: 0:00~0:00  |  공휴일운영시간: 0:00~0:00',
             '24시간 영업',
         );
-
+        let spatial = item.spatial;
+        spatial = spatial.split('/');
+        // console.log(spatial1);
+        let spatial1 = spatial[2];
+        let spatial2 = spatial[1];
         returnObj['lat'] = lats;
         returnObj['lng'] = lngs;
-
         returnObj['title'] = title;
         returnObj['state'] = state;
         returnObj['charge'] = charge;
         returnObj['extent'] = extent;
         returnObj['time'] = time;
+        returnObj['spatial1'] = spatial1;
+        returnObj['spatial2'] = spatial2;
 
         return returnObj;
     });
@@ -44,7 +49,7 @@ const MapMarkers = ({ locations }) => {
                         <MapMarker
                             position={location}
                             image={{
-                                src: './img/Parkinglot_sign.svg',
+                                src: 'https://biainthew.github.io/Project6_parkingLots/img/Parkinglot_sign.svg',
                                 size: {
                                     width: 35,
                                     height: 46,
@@ -66,7 +71,10 @@ const MapMarkers = ({ locations }) => {
                                     }}
                                     onClick={() => setIsOpen(false)}
                                 >
-                                    <img src="./img/xmark.svg" alt="x" />
+                                    <img
+                                        src="https://biainthew.github.io/Project6_parkingLots/img/xmark.svg"
+                                        alt="x"
+                                    />
                                 </div>
                                 <div className="detail">
                                     <div className="detail-line"></div>
@@ -76,23 +84,32 @@ const MapMarkers = ({ locations }) => {
                                     </div>
                                     <div className="detail-info">
                                         <p>
-                                            <img src="./img/info1.svg" alt="" />
-                                            경기 수원시 팔달구 매산로 31
+                                            <img
+                                                src="https://biainthew.github.io/Project6_parkingLots/img/info1.svg"
+                                                alt=""
+                                            />
+                                            {location.spatial1}
                                         </p>
-                                        <p>
-                                            지번 | 경기 수원시 팔달구 매산로2가
-                                            35-4
-                                        </p>
+                                        <p>{location.spatial2}</p>
                                         <p style={{ overflow: 'scroll' }}>
-                                            <img src="./img/info2.svg" alt="" />
+                                            <img
+                                                src="https://biainthew.github.io/Project6_parkingLots/img/info2.svg"
+                                                alt=""
+                                            />
                                             {location.time}
                                         </p>
                                         <p>
-                                            <img src="./img/info3.svg" alt="" />
+                                            <img
+                                                src="https://biainthew.github.io/Project6_parkingLots/img/info3.svg"
+                                                alt=""
+                                            />
                                             연중무휴
                                         </p>
                                         <p>
-                                            <img src="./img/info4.svg" alt="" />
+                                            <img
+                                                src="https://biainthew.github.io/Project6_parkingLots/img/info4.svg"
+                                                alt=""
+                                            />
                                             {location.charge}
                                         </p>
                                     </div>

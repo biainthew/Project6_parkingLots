@@ -40,7 +40,7 @@ const MyMap = () => {
     useEffect(() => {
         axios
             .get(
-                '//api.kcisa.kr/openapi/service/rest/convergence2019/getConver11?serviceKey=51a64879-1354-44fe-a738-c8a05f7559d1&numOfRows=50',
+                'http://api.kcisa.kr/openapi/service/rest/convergence2019/getConver11?serviceKey=51a64879-1354-44fe-a738-c8a05f7559d1&numOfRows=100',
             )
             .then((result) => {
                 locations = result.data.response.body.items.item;
@@ -59,7 +59,6 @@ const MyMap = () => {
                 isPanto={state.isPanto}
                 level={13}
                 ref={mapRef}
-                // zoomable={false}
             >
                 <div className="map-search">
                     <input
@@ -68,7 +67,10 @@ const MyMap = () => {
                         placeholder="어디에 주차하세요?"
                     />
                     <button onClick={SearchMap}>
-                        <img src="/img/ico_search.svg" alt="" />
+                        <img
+                            src="https://biainthew.github.io/Project6_parkingLots/img/ico_search.svg"
+                            alt="search"
+                        />
                     </button>
                 </div>
                 <MarkerClusterer
